@@ -11,6 +11,11 @@ def register(cb):
 	cb(AverageMod())
 
 class AverageMod(loader.Module):
+    """Среднестатистический Любитель"""
+	strings = {
+		'name': 'Среднестатистический Любитель',
+		'usage': 'Напиши <code>.help Любитель</code>',
+	}
     def __init__(self):
 		self.name = self.strings['name']
 		self._me = None

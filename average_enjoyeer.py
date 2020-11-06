@@ -11,6 +11,10 @@ def register(cb):
 	cb(AverageMod())
 
 class AverageMod(loader.Module):
+    def __init__(self):
+		self.name = self.strings['name']
+		self._me = None
+		self._ratelimit = []
     async def avg(self, message):
         ufr = requests.get("https://github.com/LaciaMemeFrame/FTG-Modules/blob/master/open-sans.ttf?raw=true")
         f = ufr.content
@@ -38,3 +42,4 @@ class AverageMod(loader.Module):
         img.save(out)
         out.seek(0)
         await message.client.send_file(message.to_id, out, reply_to=reply)
+        await message.delete()

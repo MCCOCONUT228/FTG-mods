@@ -11,16 +11,16 @@ def register(cb):
 	cb(AverageMod())
 
 class AverageMod(loader.Module):
-    """Среднестатистический Любитель"""
+    """Среднестатистический_Любитель"""
 	strings = {
-		'name': 'Среднестатистический Любитель',
+		'name': 'Среднестатистический_Любитель',
 		'usage': 'Напиши <code>.help Любитель</code>',
 	}
     def __init__(self):
 		self.name = self.strings['name']
 		self._me = None
 		self._ratelimit = []
-    async def avg(self, message):
+    async def avgcmd(self, message):
         ufr = requests.get("https://github.com/LaciaMemeFrame/FTG-Modules/blob/master/open-sans.ttf?raw=true")
         f = ufr.content
 

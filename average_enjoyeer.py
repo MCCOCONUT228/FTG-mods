@@ -12,10 +12,8 @@ def register(cb):
 
 class AverageMod(loader.Module):
     """Среднестатистический_Любитель"""
-	strings = {
-		'name': 'Среднестатистический_Любитель',
-		'usage': 'Напиши <code>.help Любитель</code>',
-	}
+	strings = {'name': 'Среднестатистический_Любитель',
+		   'usage': 'Напиши <code>.help Любитель</code>',}
     def __init__(self):
 		self.name = self.strings['name']
 		self._me = None
@@ -32,7 +30,6 @@ class AverageMod(loader.Module):
         text = message.text
         tf = text[4:text.find("&")]
         ts = text[text.find("&")+1:len(text)]
-        #t = t.replace("𓃐","\n")
         draw = ImageDraw.Draw(img)
         font = ImageFont.truetype(io.BytesIO(f), 14, encoding='UTF-8')
         imtext = Image.new("RGBA", (W+10, H+10), (0, 0,0,0))
@@ -40,7 +37,6 @@ class AverageMod(loader.Module):
         draw.text((10, 10),tf,(0,0,0),font=font, align='left')
         draw.text((340, 10),ts,(0,0,0),font=font, align='left')
         imtext.thumbnail((680, 501))
-        w, h = 680, 501
         img.paste(imtext, (10,10), imtext)
         out = io.BytesIO()
         out.name = "enjoyer.jpg"

@@ -1,5 +1,5 @@
 from telethon import events
-#from .. import loader, utils
+from .. import loader, utils
 import os
 import requests
 from PIL import Image,ImageFont,ImageDraw

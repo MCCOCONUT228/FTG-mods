@@ -47,7 +47,7 @@ class AverageMod(loader.Module):
 		W, H = img.size
 		text = message.text
 		tf = text[4:text.find("&")]
-		ts = text[text.find("&")+4:len(text)]
+		ts = text[text.find("&")+5:len(text)]
 		draw = ImageDraw.Draw(img)
 		font = ImageFont.truetype(io.BytesIO(f), 34, encoding='UTF-8')
 		imtext = Image.new("RGBA", (W+10, H+10), (0, 0,0,0))
